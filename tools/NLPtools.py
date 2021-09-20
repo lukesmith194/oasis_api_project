@@ -42,6 +42,21 @@ def connecttablessong(artist,song):
     """, engine)
     return df
 
+def connecttablesart(artist):
+    artists_id = artist_id.get(artist)
+    print(artist_id)
+    df= pd.read_sql_query(f"""
+
+    SELECT idartists,idsongs,idlyrics,lyrics.lyrics
+    FROM artists
+    INNER JOIN songs
+    ON artists.idartists = songs.artists_idartists
+    INNER JOIN lyrics
+    ON lyrics.idlyrics = songs.lyrics_idlyrics
+    WHERE artist_name = "{artist}";
+    """, engine)
+    return df
+
 def nlp(col):
     sia = SentimentIntensityAnalyzer()
     return sia.polarity_scores(col)

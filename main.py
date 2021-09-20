@@ -1,16 +1,18 @@
 from flask import Flask, request
 from flask.json import jsonify
-import random
 import json
 import tools.sqltools as sql
 import tools.NLPtools as npl
+import markdown.extensions.fenced_code
 
 
 app = Flask(__name__)
 
-@app.route("/")
+@app.route('/')
 def index():
-    return "Hola Mundo"
+    readme_file = open("README.md", "r")
+    md_template = markdown.markdown(readme_file.read(), extensions = ["fenced_code"])
+    return md_template
 
 @app.route("/insertartists", methods=["POST"])
 def insertartist():
@@ -60,6 +62,14 @@ def nlpsong(artist,song):
     song_nlp = song_nlp.to_json()
     song_nlp2 = json.loads(song_nlp)
     return song_nlp2["compound"]
+
+@app.route("/NLP/<artist>")
+def nlpartist(artist):
+    print("\n" * 20)
+    song_nlp = npl.connecttablesart(artist)
+    song_nlp["polarity"] = song_nlp.lyrics.apply(npl.nlp)
+    song_nlp["compound"] = song_nlp.polarity.apply(npl.compound)
+    return str(round(song_nlp["compound"].mean(),2))
 
 
 
