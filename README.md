@@ -36,6 +36,18 @@ Endpoint that returns the album names of the choosen artist from the DB via the 
 
 Endpoint that returns the lyrics of the choosen song from the DB via API. _songname_ is a variable in API call.
 
+/NLP/_artist_/_song_
+
+Endpoint that returns the natural language process of the choosen artist and song from the DB via API. _song_ and _artist_ are variables in API call. The NLP measures the positivity of each song made by a specific artist.
+
+/NLP/_artist_
+
+Endpoint that returns the natural language process of the choosen artist from the DB via API. _artist_ is variable in API call. The NLP measures the positivity of each artist throughout the songs found in the DB.
+
+
+
+
+
 ** ALL GET ENDPOINTS RETURN INFORMATION IN JSON FORMAT **
 
 

@@ -26,6 +26,12 @@ song_lyrics_id = {"Wonderwall":32,
 }
 
 def connecttablessong(artist,song):
+    """
+    Function that joins SQL tables artists,songs and lyrics in order to create a dataframe where all of the three values are available
+    ARGS : artists name, song
+    return: dataframe containing artist id, song id, lyric id and the lyrics of the song inserted.
+    
+    """
     artists_id = artist_id.get(artist)
     print(artist_id)
     song_id = song_lyrics_id.get(song)
@@ -58,20 +64,23 @@ def connecttablesart(artist):
     return df
 
 def nlp(col):
+    """
+    Function that uses sentiment analysis on a column, has to be string.
+    ARGS : Column name where the analysis is needed to be implemented
+    RETURNS : new column in DF that contains full analysis scoring of implemented column
+    """
     sia = SentimentIntensityAnalyzer()
     return sia.polarity_scores(col)
 
 def compound(col_new):
+    """
+    Function that iterates through a certain column, usually the one created in the previous function and extracts "compound" count of language analysis
+    ARGS: column
+    RETURN : new column with compound extracted from NLP 
+    
+    """
     for j, v in col_new.items():
         print(j)
         if j == "compound":
             return v
 
-
-
-
-
-
-
-def songanalysis(songname):
-    data = requests.get('http://127.0.0.1:5000/lyrics/<songname>')

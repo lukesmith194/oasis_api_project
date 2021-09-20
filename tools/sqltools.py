@@ -126,7 +126,12 @@ artist_id = {"Oasis": 82,
             "Noel Gallagher´s flying birds": 84}
 
 def artistsalbums(artist):
-    print("hola", artist)
+    """
+    Calls API with artist name to receive all artists albums found in DB
+    ARGS : artist name
+    Returns: Artists albums
+    """
+    print(artist)
     if artist == "Oasis":
         artists_id = (artist_id["Oasis"])
     elif artist == "Liam Gallagher":
@@ -166,7 +171,12 @@ song_lyrics_id = {"Wonderwall":32,
 }
 
 def songslyrics(songname):
-    print("hola", songname)
+    """
+    Calls API with song name to receive lyrics of the song found in DB.
+    ARGS : song name
+    Returns: songs lyrics
+    """
+    print(songname)
     song_id = song_lyrics_id.get(songname)
     print(song_id)
 
