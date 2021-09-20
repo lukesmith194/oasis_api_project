@@ -72,15 +72,5 @@ def nlpartist(artist):
     return str(round(song_nlp["compound"].mean(),2))
 
 
-
-
-
-
-
-
-
-
-
-
 if __name__ == '__main__':
     app.run(debug=True)
