@@ -2,6 +2,12 @@
 
 The purpose of this project is to upload my info about the musical group Oasis and their solo parts to a API to be able to do a sentiment analysis of the songs when the group was together and whenthey split up because of their differences.
 
+## Content
+- Main . py file containing all end points available.
+- Tools folder containing all code for queries to SQL datbase as well as NPL functions for specific endpoints.
+- Config folder contains connection to SQL database.
+
+
 ## Endpoints
 Main connection to API, used to receive README. Must be added before endpoints 
 
@@ -51,12 +57,12 @@ Endpoint that returns the natural language process of the choosen artist from th
 From the NLP done for each artist, we can see that Noel Gallagher's High Flying Birds which is the group that Noel created after the split from Oasis has more negative lyrics then the songs when he was part of Oasis. Also Noel´s songs are more negative then his brothers songs after the split. This is most probably due to Noel´s group being formed very shortly after the split with Oasis and there being still some bitterness towards his brother after the bad breakup.
 
 ### Libraries
--	Pandas [here] (https://pandas.pydata.org/docs/)
--	Requests [here] (https://docs.python-requests.org/en/master/)
--	Json [here] (https://docs.python.org/3/library/json.html)
--   Flask [here] (https://flask.palletsprojects.com/en/2.0.x/)
--   DotEnv [here] (https://www.npmjs.com/package/dotenv)
--   SqlAlchemy [here] (https://docs.sqlalchemy.org/en/14/)
+-	Pandas [Here](https://pandas.pydata.org/docs/)
+-	Requests [Here](https://docs.python-requests.org/en/master/)
+-	Json [Here](https://docs.python.org/3/library/json.html)
+-   Flask [Here](https://flask.palletsprojects.com/en/2.0.x/)
+-   DotEnv [Here](https://www.npmjs.com/package/dotenv)
+-   SqlAlchemy [Here](https://docs.sqlalchemy.org/en/14/)
 
 
 
